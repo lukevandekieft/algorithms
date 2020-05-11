@@ -7,3 +7,9 @@ function factorial(n) {
     return factorial(n - 1) * n;
   }
 }
+
+// ********** SYNTAX ************
+
+// BRACKETS OR NO?
+str.split('').every((value, i) => { return value === str[str.length - i - 1] }) // Brackets are optional when passing fat arrow function, however CHOOSING to include them necessitates a return block. Skill when possible.
+str.split('').every((value, i) => value === str[str.length - i - 1])
