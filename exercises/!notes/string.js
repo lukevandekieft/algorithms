@@ -5,7 +5,7 @@ value = "meal"
 string.concat(value) // "cornmeal"
 string.concat(value.charAt(3)) // "cornl"
 
-// INFO FUNCTIONS
+// EVAL FUNCTIONS
 string.indexOf("rn") // 2
 string.length // 4
 
