@@ -8,6 +8,15 @@ function factorial(n) {
   }
 }
 
+// WHILE
+// this is like a ForLoop but has a bit more flexibility: it COULD run forever if needed, it could run never, it could stop at an overflow value (such as below where overflow doesn't matter for slicing an array)
+const chunked = [];
+let index = 0;
+while (index < array.length) {
+  chunked.push(array.slice(index, index + size));
+  index += size;
+}
+
 // ********** SYNTAX ************
 
 // BRACKETS OR NO?
@@ -17,3 +26,7 @@ str.split('').every((value, i) => value === str[str.length - i - 1])
 // LOOPING
 for (let char of characters) // Works for strings and arrays
 for (let char in characters) // Works for objects
+
+// ITERATIVE ADDING
+let number = 0;
+number++   ||   number = number + 1  //  <-- "number = number++" does NOT work: use one or the other
