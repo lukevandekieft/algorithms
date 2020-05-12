@@ -8,3 +8,5 @@ let desiredObj = "a"
 // EVAL FUNCTIONS
 counter[desiredObj] // 5
 counter["a"] // 5
+Object.keys(counter) // ['a', 'e', 'i']
+Object.keys(counter).length // 3

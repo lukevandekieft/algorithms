@@ -1,4 +1,5 @@
 array = ["apple", "banana", "corn", "durian"]
+mixedArray = ["apple", -85, "corn", 100.234]
 value = "meal"
 
 // CHANGE FUNCTIONS
@@ -8,6 +9,7 @@ array.reduce((accumulator, currentValue) => accumulator + currentValue, value); 
 array.slice(1, 4) // ["banana", "corn", "durian"]
 array.slice(1, 4000) // ["banana", "corn", "durian"]   <-- slicing past an allowed bound returns the max allowed, don't worry about the remainder
 array.slice(-1000, 3) // ["apple", "banana", "corn"]   <-- same for negatives 
+mixedArray.sort() // [-85, 100.234, "apple", "corn"]   <-- array will attempt to sort.
 
 // EVAL FUNCTIONS
 array.every((value) => { value.length > 3 }) // true   <-- self-defined function is checked for every value; if anything comes back false the result is false (e.g. replacing 3 with 4 would return false because a single value, "corn", returns false)

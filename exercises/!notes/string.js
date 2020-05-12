@@ -1,9 +1,14 @@
 string = "corn"
 value = "meal"
+weirdString ="SoOo WeIrd!!1"
 
 // CHANGE FUNCTIONS
 string.concat(value) // "cornmeal"
 string.concat(value.charAt(3)) // "cornl"
+string.toUpperCase() // "CORN"
+string.toLowerCase() // "sooo weird!!1"   <-- other characters ignored for both functions
+weirdString.replace(/o/, "x") // "SxOo WeIrd!!1"   <-- replace first part with second. Here we only replace the first match.
+weirdString.replace(/o/g, "x") // "SxOx WeIrd!!1"  <-- the g flag expands the search to replace every instance of __
 
 // EVAL FUNCTIONS
 string.indexOf("rn") // 2

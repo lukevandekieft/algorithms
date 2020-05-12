@@ -30,3 +30,6 @@ for (let char in characters) // Works for objects
 // ITERATIVE ADDING
 let number = 0;
 number++   ||   number = number + 1  //  <-- "number = number++" does NOT work: use one or the other
+
+// REGEX
+// See OneNote: "Web Development --> Other --> Regex"
