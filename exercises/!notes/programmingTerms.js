@@ -13,3 +13,7 @@ function factorial(n) {
 // BRACKETS OR NO?
 str.split('').every((value, i) => { return value === str[str.length - i - 1] }) // Brackets are optional when passing fat arrow function, however CHOOSING to include them necessitates a return block. Skill when possible.
 str.split('').every((value, i) => value === str[str.length - i - 1])
+
+// LOOPING
+for (let char of characters) // Works for strings and arrays
+for (let char in characters) // Works for objects

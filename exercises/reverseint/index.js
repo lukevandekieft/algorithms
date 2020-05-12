@@ -21,6 +21,10 @@ function reverseInt(n) {
   } else {
   return reversePositiveNumber(n);
   }
+  // NOTE: to get around boolean we could multiply reversePositiveNumber by Math.sign(n) (since it'll either be 0, 1, or -1 it won't impact the value)
 }
 
 module.exports = reverseInt;
+
+// ************** RESULTS *********************
+// overall feels pretty good. Cleaning up the boolean return with Math.sign(n) would make it cleaner
