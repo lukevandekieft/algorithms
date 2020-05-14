@@ -15,6 +15,11 @@ string.repeat(0) // ""
 // EVAL FUNCTIONS
 string.indexOf("rn") // 2
 string.length // 4
+string.includes("c") // true
+string.includes("corn") // true
+weirdString.match(/o/g)) // ['o', 'o']   <-- two matches, each put into array 
+weirdString.match("o")) // ['o', index: 1, input: 'SoOo WeIrd!!1', groups: undefined]   <-- weird input, look into this more
+weirdString.match(/u/g)) // null   <-- note that we don't get empty array!
 
 // TO ARRAY
 string.split('') // [ "c", "o", "r", "n" ]
