@@ -7,6 +7,14 @@ function factorial(n) {
     return factorial(n - 1) * n;
   }
 }
+// TIP: to default a value for recursion:
+function createTable(column, row = 0) {
+  row++;
+  if (row < column) {
+    createTable(column, row)
+  }
+}
+// TIP: start with your exit case and build your first function to simply count down/up to the exit. This greatly reduces the chance of getting stuck in a recursion
 
 // WHILE
 // this is like a ForLoop but has a bit more flexibility: it COULD run forever if needed, it could run never, it could stop at an overflow value (such as below where overflow doesn't matter for slicing an array)

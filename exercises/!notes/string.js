@@ -9,6 +9,8 @@ string.toUpperCase() // "CORN"
 string.toLowerCase() // "sooo weird!!1"   <-- other characters ignored for both functions
 weirdString.replace(/o/, "x") // "SxOo WeIrd!!1"   <-- replace first part with second. Here we only replace the first match.
 weirdString.replace(/o/g, "x") // "SxOx WeIrd!!1"  <-- the g flag expands the search to replace every instance of __
+string.repeat(3) // "corncorncorn"   <-- useful for repeating individual amounts dynamically
+string.repeat(0) // ""
 
 // EVAL FUNCTIONS
 string.indexOf("rn") // 2
