@@ -10,6 +10,12 @@ array.slice(1, 4) // ["banana", "corn", "durian"]
 array.slice(1, 4000) // ["banana", "corn", "durian"]   <-- slicing past an allowed bound returns the max allowed, don't worry about the remainder
 array.slice(-1000, 3) // ["apple", "banana", "corn"]   <-- same for negatives 
 mixedArray.sort() // [-85, 100.234, "apple", "corn"]   <-- array will attempt to sort.
+///
+array.pop() // "durian"   <-- removes the last value in an array and returns it
+console.log(array) // ["apple", "banana", "corn"]   <-- pop doesn't just get a value, it REMOVES it. This is both eval and change
+///
+array.unshift("flour") // 5   <-- doesn't actually return a value itself, just a length
+console.log(array) // ["flour", "apple", "banana", "corn", "durian"]   <-- the array itself however has been changed!
 
 // EVAL FUNCTIONS
 array.every((value) => { value.length > 3 }) // true   <-- self-defined function is checked for every value; if anything comes back false the result is false (e.g. replacing 3 with 4 would return false because a single value, "corn", returns false)
