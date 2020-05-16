@@ -24,4 +24,21 @@ array.join() // "apple,banana,corn,durian" <-- default includes commas
 array.join('') // "applebananacorndurian" 
 array.join(' + ') // "apple + banana + corn + durian"
 
+// MISC -----------------------------
+
+// assigning new positions to arrays
+array[3] = "hello" // [, , , "hello"]
+array[3] = null // [, , , null] 
+// If we assign an array position a value it will automatically fill any "missing" predecessors with null values. This is suuuper helpful for developing arrays w/o fixed starting or ending points. Don't populate an array with null, just push it!
+
+// reusing block array
+let subarray = ["peanut", null]
+let array = [];
+array.push(subarray)
+array.push(subarray)
+array[0][1] = "hello"
+console.log(array) // [["peanut", "hello"], ["peanut", "hello"]]
+// subarrays retain their shared relation so changing one changes the others. Unless you WANT this behavior you should really avoid assigning subvalues like this
+
+
 
