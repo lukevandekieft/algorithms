@@ -1,4 +1,4 @@
-// RECURSION
+// RECURSION ******************************
 // Function that calls itself with manipulated input(s) until a certain condition is met.
 function factorial(n) {
   if (n == 0) {
@@ -15,8 +15,9 @@ function createTable(column, row = 0) {
   }
 }
 // TIP: start with your exit case and build your first function to simply count down/up to the exit. This greatly reduces the chance of getting stuck in a recursion
+// NOTE: the key here is that all the return statements are actually being added! That final "return 1", every instance of "return [calculate]", these are ALL being taken and added at the end. So this can be used additively or multiplicatively but either way we're adding up all the results (which is basically multiplication anyhow) 
 
-// WHILE
+// WHILE ***********************************
 // this is like a ForLoop but has a bit more flexibility: it COULD run forever if needed, it could run never, it could stop at an overflow value (such as below where overflow doesn't matter for slicing an array)
 const chunked = [];
 let index = 0;
@@ -24,6 +25,36 @@ while (index < array.length) {
   chunked.push(array.slice(index, index + size));
   index += size;
 }
+// While functions do NOT end mid-action. The entire thing will run before checking again. If you need to stop midway through (e.g. stop halfway through a test suite) you need to create individual checks WITHIN the while loop.
+
+
+// MEMOIZATION *******************************
+// a function that wraps around a function to create a cache.
+function memoize(fn) {
+  const cache = {};
+  return function(...args) {
+    if (cache[args]) {
+      return cache[args];
+    }
+
+    const result = fn.apply(this, args);
+    //apply runs the function in question with THIS, the 'this' value we're passing in, and ARGS, our variables passed as an array. Here we're simply passing 'this' down in scope like fat arrow and then passing our variables.
+    cache[args] = result;
+    return result;
+  };
+}
+
+function slowFib(n) {
+  if (n < 2) {
+    return n;
+  }
+  return fib(n - 1) + fib(n - 2);
+  // it's important that this function is named our exported function (fib) so that it gets called by memoize, not our slower function
+}
+
+const fib = memoize(slowFib);
+module.exports = fib;
+
 
 // ********** SYNTAX ************
 
@@ -55,5 +86,6 @@ number++   ||   number = number + 1  //  <-- "number = number++" does NOT work: 
 
 // *************** SPACE COMPLEXITY *********************
 // How much space / memory / RAM does a program take?
+// Study runtime first: this is less common and once you understand runtime this should be pretty intuitive
 
 // This is often similar but not always: for the pyramid step problem I created a linear runtime (2 creates per line) but a potentially quadratic space complexity (increasing from 1 to 2 to 3 to 4 means my saved characters go from 1 to 6 to 15 to 28)
