@@ -41,3 +41,19 @@ number++   ||   number = number + 1  //  <-- "number = number++" does NOT work: 
 
 // REGEX
 // See OneNote: "Web Development --> Other --> Regex"
+
+
+// ********** RUNTIME COMPLEXITY *****************
+// "What is the runtime complexity of your solution?"    <-- "How much more processing power/time would running your function take if we doubled the inputs?"
+// aka BIG O
+// Linear / n / O(n):  
+// Quadratic / n^2 / O(n^2)
+// Constant / 1 / O(1)
+
+
+// SEE RUNTIMES IMAGE
+
+// *************** SPACE COMPLEXITY *********************
+// How much space / memory / RAM does a program take?
+
+// This is often similar but not always: for the pyramid step problem I created a linear runtime (2 creates per line) but a potentially quadratic space complexity (increasing from 1 to 2 to 3 to 4 means my saved characters go from 1 to 6 to 15 to 28)
