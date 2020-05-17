@@ -24,6 +24,74 @@
 
 const Queue = require('./queue');
 
-function weave(sourceOne, sourceTwo) {}
+function weave(sourceOne, sourceTwo) {
+  // let queueOne = new Queue();
+  // if (Array.isArray(sourceOne)) {
+  //   for (let item of sourceOne) {
+  //     queueOne.add(item);
+  //   }
+  // } else {
+  //   queueOne.add(sourceOne)
+  // }
+
+  // let queueTwo = new Queue();
+  // if (Array.isArray(sourceTwo)) {
+  //   for (let item of sourceTwo) {
+  //     queueTwo.add(item);
+  //   }
+  // } else {
+  //   queueTwo.add(sourceTwo)
+  // }
+  
+  let queueOne = sourceOne;
+  let queueTwo = sourceTwo;
+  
+  let queueThree = new Queue();
+  let queueOneActive = true;
+  let queueTwoActive = true;
+  
+  const addFromQueueOne = () => {
+    if (queueOne.peek()) {
+      queueThree.add(queueOne.remove())
+    } else {
+      queueOneActive = false;
+    }
+  }
+  const addFromQueueTwo = () => {
+    if (queueTwo.peek()) {
+      queueThree.add(queueTwo.remove())
+    } else {
+      queueTwoActive = false;
+    }
+  }
+
+  while (queueOneActive && queueTwoActive) {
+    addFromQueueOne();
+    addFromQueueTwo();
+  }
+  while (queueOneActive) {
+    addFromQueueOne();
+  }
+  while (queueTwoActive) {
+    addFromQueueTwo();
+  }
+  
+  return queueThree;
+}
 
 module.exports = weave;
+
+// finished note: I missed that these would be two literal queues, cost myself a big headache. I might blame this on taking multiple days but it's worth double-checking inputs on these questions
+// finished note: dynamic variables do NOT work here. I've run into this problem before - how to solve?
+// finished note: remember that the best way to check if an array is empty is to check its length
+
+// ***************** RESULTS *************************
+// Took me way too long. See notes above on errors.
+// We can simply do "return array[n - 1]" instead of checking array.length, since a returned empty can be read to infer the same
+
+// CLEANER ANSWER:
+// while (sourceOne.peek() }} sourceTwo.peek()) {
+  // if (sourceOne.peek()) {
+      // function
+  // } ...
+// }
