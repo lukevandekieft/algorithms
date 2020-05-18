@@ -13,6 +13,7 @@ mixedArray.sort() // [-85, 100.234, "apple", "corn"]   <-- array will attempt to
 ///
 array.pop() // "durian"   <-- removes the last value in an array and returns it
 console.log(array) // ["apple", "banana", "corn"]   <-- pop doesn't just get a value, it REMOVES it. This is both eval and change
+// NOTE: you should avoid popping in an iterative solution - it's weird! Opt for 'while' or something else that takes into account the fact that the loop is changing.
 ///
 array.unshift("flour") // 5   <-- doesn't actually return a value itself, just a length
 console.log(array) // ["flour", "apple", "banana", "corn", "durian"]   <-- the array itself however has been changed!

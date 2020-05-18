@@ -14,6 +14,47 @@
 
 const Stack = require('./stack');
 
-class Queue {}
+class Queue {
+  constructor () {
+    this.coreStack = new Stack();
+  }
+
+  add (value) {
+    this.coreStack.push(value);
+  }
+
+  remove () {
+    let compareStack = new Stack();
+    while (this.coreStack.peek()) {
+      compareStack.push(this.coreStack.pop());
+    }
+    const returnValue = compareStack.pop();
+
+    while (compareStack.peek()) {
+      this.coreStack.push(compareStack.pop());
+    }
+    return returnValue;
+  }
+
+  peek () {
+    let compareStack = new Stack();
+    while (this.coreStack.peek()) {
+      compareStack.push(this.coreStack.pop());
+    }
+    const returnValue = compareStack.peek();
+
+    while (compareStack.peek()) {
+      this.coreStack.push(compareStack.pop());
+    }
+    return returnValue;
+  }
+}
 
 module.exports = Queue;
+
+
+// test note: in constructor we define with "this.var", not "const var" 
+// NOTE: use peek not added functionality
+// ********************* RESULT ******************
+// Kinda worked? I really had the right idea, the core here is implementation.
+// You CANNOT iterate through a popped stack!
