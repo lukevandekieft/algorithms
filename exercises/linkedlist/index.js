@@ -53,6 +53,16 @@ class LinkedList {
   clear () {
     this.head = null;
   }
+
+  removeFirst () {
+    if (!this.head) {
+      this.head = null;
+      return
+    }
+
+    this.head = this.head.next;
+  }
+  // NOTE: edited solution to only have 1 if statement. This is useful for reviewing: can flipping a statement let us use fewer checks?
 }
 
 module.exports = { Node, LinkedList };
