@@ -9,6 +9,15 @@ class Node {
   }
 }
 
-class LinkedList {}
+// NOTE: linkedlist doesn't come with inherent knowledge of list, just the head and functions for analyzing itself
+class LinkedList {
+  constructor () {
+    this.head = null;
+  }
+
+  insertFirst (data) {
+    this.head = new Node(data, this.head);
+  }
+}
 
 module.exports = { Node, LinkedList };
