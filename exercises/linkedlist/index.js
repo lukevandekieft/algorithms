@@ -63,6 +63,23 @@ class LinkedList {
     this.head = this.head.next;
   }
   // NOTE: edited solution to only have 1 if statement. This is useful for reviewing: can flipping a statement let us use fewer checks?
+
+  removeLast () {
+    if (!this.head) {
+      return;
+    } else if (!this.head.next) {
+      this.head = null;
+      return;
+    }
+
+    let currentNode = this.head;
+    let lastNode = null;
+    while (currentNode.next) {
+      lastNode = currentNode;
+      currentNode = currentNode.next;
+    }
+    lastNode.next = null;
+  }
 }
 
 module.exports = { Node, LinkedList };
