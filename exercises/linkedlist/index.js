@@ -100,6 +100,32 @@ class LinkedList {
     }
     return currentNode;
   }
+
+  removeAt (nodePosition) {
+    // verify that nodePosition === positive int
+
+    if (!this.head) {
+      return;
+    } else if (nodePosition === 0) {
+      this.head = this.head.next;
+      return;
+    }
+    
+    // start current node at postion [1]
+    let counter = 1;
+    let previousNode = this.head;
+    let currentNode = this.head.next;
+
+    while (counter < nodePosition && currentNode) {
+      previousNode = currentNode;
+      currentNode = previousNode.next;
+      counter++;
+    }
+
+    if (currentNode) {
+      previousNode.next = currentNode.next;
+    }
+  }
 }
 
 module.exports = { Node, LinkedList };
