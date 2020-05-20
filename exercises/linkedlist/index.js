@@ -126,6 +126,29 @@ class LinkedList {
       previousNode.next = currentNode.next;
     }
   }
+
+  insertAt (data, nodePosition) {
+    // validate nodePosition === positive int
+    // Maybe: validate data?
+
+    if (!this.head || nodePosition === 0) {
+      this.head = new Node(data, this.head);
+      return;
+    }
+
+    let counter = 1;
+    let previousNode = this.head;
+    let currentNode = this.head.next;
+
+    while (counter < nodePosition && currentNode) {
+      previousNode = currentNode;
+      currentNode = previousNode.next;
+      counter++;
+    }
+
+    let insertedNode = new Node(data, currentNode);
+    previousNode.next = insertedNode;
+  }
 }
 
 module.exports = { Node, LinkedList };
