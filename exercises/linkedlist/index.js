@@ -90,6 +90,16 @@ class LinkedList {
       this.head = newNode;
     }
   }
+
+  getAt (nodePosition) {
+    let currentNode = this.head;
+    let counter = 0;
+    while (counter < nodePosition && currentNode) {
+      currentNode = currentNode.next;
+      counter++;
+    }
+    return currentNode;
+  }
 }
 
 module.exports = { Node, LinkedList };
