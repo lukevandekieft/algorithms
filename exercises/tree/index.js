@@ -29,8 +29,32 @@ class Tree {
   constructor () {
     this.root = null;
   }
-  // traverse method #1
-  // traverse method #2
+
+  traverseBF(fn) {
+    fn(this.root);
+    let currentBreadthArray = this.root.children;
+
+    while (currentBreadthArray.length > 0) {
+      let nextBreadthArray = [];
+      for (let i = 0; i <= currentBreadthArray.length - 1; i++) {
+        fn(currentBreadthArray[i])
+        // replace for loop with:
+        // nextBreadthArray.push(...currentBreadthArray[i].children)
+        for (let j = 0; j <= currentBreadthArray[i].children.length - 1; j++) {
+          nextBreadthArray.push(...currentBreadthArray[i].children[j])
+        }
+      }
+      currentBreadthArray = nextBreadthArray;
+    }
+    // function to create array of children
+    // function to perform on array of children
+    // checks if array is empty
+    return;
+  }
 }
 
 module.exports = { Tree, Node };
+
+// *********** RESULTS ************
+// I got there but I REALLY should have double-checked the function first. Did my object nestings make sense? Did I call the function on EVERY node? These were the dumb mistakes made
+// spread operator should be a go-to!

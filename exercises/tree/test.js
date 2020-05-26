@@ -50,7 +50,7 @@ describe('Tree', () => {
     expect(letters).toEqual(['a', 'b', 'c', 'd']);
   });
 
-  test('Can traverse DF', () => {
+  test.skip('Can traverse DF', () => {
     const letters = [];
     const t = new Tree();
     t.root = new Node('a');

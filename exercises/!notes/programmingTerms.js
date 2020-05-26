@@ -78,6 +78,9 @@ while (Object.main && Object.main.secondary) {
 }
 // I often find myself nesting booleans since you can't check a value of null. The above syntax allows this to work altogether since the 2nd value won't get evaluated unless the 1st one is true.
 
+// SPREAD OPERATOR
+array.push(...otherArray.children)
+// This can be used not only for pushing unknown blocks of info but also for replacing a for loop. In the above example I'm pushing every child individually rather than pushing an array of children; I normally would have approached this with a for loop 
 
 // ********** RUNTIME COMPLEXITY *****************
 // "What is the runtime complexity of your solution?"    <-- "How much more processing power/time would running your function take if we doubled the inputs?"
