@@ -73,6 +73,11 @@ number++   ||   number = number + 1  //  <-- "number = number++" does NOT work: 
 // REGEX
 // See OneNote: "Web Development --> Other --> Regex"
 
+// NESTED BOOLEANS
+while (Object.main && Object.main.secondary) {
+}
+// I often find myself nesting booleans since you can't check a value of null. The above syntax allows this to work altogether since the 2nd value won't get evaluated unless the 1st one is true.
+
 
 // ********** RUNTIME COMPLEXITY *****************
 // "What is the runtime complexity of your solution?"    <-- "How much more processing power/time would running your function take if we doubled the inputs?"

@@ -12,6 +12,26 @@
 //   l.insertLast('c')
 //   midpoint(l); // returns { data: 'b' }
 
-function midpoint(list) {}
+function midpoint(list) {
+  let currentNode = list.head;
+  let doubledNode = currentNode;
+
+  while (doubledNode) {
+    doubledNode = doubledNode.next;
+    if (doubledNode) {
+      doubledNode = doubledNode.next;
+    }
+
+    if (doubledNode) {
+      currentNode = currentNode.next;
+    }
+  }
+
+  return currentNode;
+}
 
 module.exports = midpoint;
+
+// ************ RESULTS ***************
+// Got the answer but could have written this more cleanly with a shared syntax:
+// while (doubledNode.next && doubledNode.next.next)
