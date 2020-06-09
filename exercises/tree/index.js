@@ -41,20 +41,54 @@ class Tree {
         // replace for loop with:
         // nextBreadthArray.push(...currentBreadthArray[i].children)
         for (let j = 0; j <= currentBreadthArray[i].children.length - 1; j++) {
-          nextBreadthArray.push(...currentBreadthArray[i].children[j])
+          nextBreadthArray.push(currentBreadthArray[i].children[j])
         }
       }
       currentBreadthArray = nextBreadthArray;
     }
-    // function to create array of children
-    // function to perform on array of children
-    // checks if array is empty
+    return;
+  }
+
+  // does exit case work?
+  traverseDF(fn) {
+    // vet that fn is actually a function
+
+    if (!this.root) {
+      return;
+    } else if (!this.root.children || this.root.children.length < 1) {
+      fn(this.root);
+      return;
+    }
+
+    let topLevelArray = this.root.children;
+    let printArray = [this.root];
+
+    const iterateChildren = (array) => {
+      for (let child of array) {
+        printArray.push(child);
+        if (child.children && child.children.length > 0) {
+          iterateChildren(child.children)
+        } else {
+          for (let node of printArray) {
+            fn(node);
+          }
+          printArray = [];
+        }
+        // else case...
+        // exit case...
+      }
+    }
+
+    iterateChildren(topLevelArray);
     return;
   }
 }
 
 module.exports = { Tree, Node };
 
-// *********** RESULTS ************
+// *********** RESULTS - BF ************
 // I got there but I REALLY should have double-checked the function first. Did my object nestings make sense? Did I call the function on EVERY node? These were the dumb mistakes made
 // spread operator should be a go-to!
+
+// *********** RESULTS - DF ***********
+// Took some thinking but I'm happy with the results! The question itself was incorrect but I had it solved with unshift rather than push - easy switch in the future.
