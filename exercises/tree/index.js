@@ -91,4 +91,9 @@ module.exports = { Tree, Node };
 // spread operator should be a go-to!
 
 // *********** RESULTS - DF ***********
-// Took some thinking but I'm happy with the results! The question itself was incorrect but I had it solved with unshift rather than push - easy switch in the future.
+// Took some thinking but I'm happy with the results! The question itself was incorrect but I had it solved with unshift rather than push - easy switch in the future. Overall their solution is much cleaner though
+// Their solution took a single master list and handled stack-wise - e.g.:
+// 1) totally remove first node from list (starting with root)
+// 2) push all its children to the array (if nothing exists, nothing happens. If exists, push AS BLOCK so that it keeps its order)
+// 3) run function on node
+// 4) repeat above. Since nested nodes will keep pushing their children they will end up burying the further back nodes, preserving order.

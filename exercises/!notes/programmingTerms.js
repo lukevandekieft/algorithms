@@ -97,3 +97,7 @@ array.push(...otherArray.children)
 // Study runtime first: this is less common and once you understand runtime this should be pretty intuitive
 
 // This is often similar but not always: for the pyramid step problem I created a linear runtime (2 creates per line) but a potentially quadratic space complexity (increasing from 1 to 2 to 3 to 4 means my saved characters go from 1 to 6 to 15 to 28)
+
+
+// *************** TREE TRAVERSAL *********************
+// likely going to need to create your own tree
