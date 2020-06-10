@@ -36,12 +36,30 @@ class Node {
         console.log("Error, number equals node value");
       }
     }
-
     placeNumberInTree(this);
   }
+  // ****************** RESULTS **********************
+  // Right idea but placeNumberInTree is overkill. Try to make insert itself recursive by running the function directly on a node (e.g. this.left.insert(data) vs. placeNumberInTree(this.left) )
+
+  contains(number) {
+    if (number < this.data && !this.left) {
+      return null;
+    } else if (number < this.data && this.left.data === number) {
+      return this.left;
+    } else if (number < this.data && this.left.data !== number) {
+      return this.left.contains(number);
+    } else if (number > this.data && !this.right) {
+      return null;
+    } else if (number > this.data && this.right.data === number) {
+      return this.right;
+    } else if (number > this.data && this.right.data !== number) {
+      return this.right.contains(number)
+    }
+  }
 }
+// *************** RESULTS *********************************
+// Mostly correct but I forgot that recursive functions must be returned. BIG error here!
+// The given answer made this easier by checking if this.data === number at the very beginning  - this would save a good couple statement blocks!
 
 module.exports = Node;
 
-// ****************** RESULTS **********************
-// Right idea but placeNumberInTree is overkill. Try to make insert itself recursive by running the function directly on a node (e.g. this.left.insert(data) vs. placeNumberInTree(this.left) )

@@ -16,6 +16,7 @@ function createTable(column, row = 0) {
 }
 // TIP: start with your exit case and build your first function to simply count down/up to the exit. This greatly reduces the chance of getting stuck in a recursion
 // NOTE: the key here is that all the return statements are actually being added! That final "return 1", every instance of "return [calculate]", these are ALL being taken and added at the end. So this can be used additively or multiplicatively but either way we're adding up all the results (which is basically multiplication anyhow) 
+// NOTE: Make sure to RETURN every function if you need a final return value! Simply tacking a return on the end doesn't work: note how in the first example we RETURN factorial rather than simply calling it. THIS is what makes "return 1" actually come through.
 
 // WHILE ***********************************
 // this is like a ForLoop but has a bit more flexibility: it COULD run forever if needed, it could run never, it could stop at an overflow value (such as below where overflow doesn't matter for slicing an array)
