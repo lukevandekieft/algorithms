@@ -83,6 +83,8 @@ while (Object.main && Object.main.secondary) {
 // SPREAD OPERATOR
 array.push(...otherArray.children)
 // This can be used not only for pushing unknown blocks of info but also for replacing a for loop. In the above example I'm pushing every child individually rather than pushing an array of children; I normally would have approached this with a for loop 
+array.push(...firstArray, ...secondArray, ...thirdArray)
+// Also a good way to combine a bunch of arrays!
 
 // ********** RUNTIME COMPLEXITY *****************
 // "What is the runtime complexity of your solution?"    <-- "How much more processing power/time would running your function take if we doubled the inputs?"
