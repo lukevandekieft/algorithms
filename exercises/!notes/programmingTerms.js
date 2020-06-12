@@ -14,10 +14,12 @@ function createTable(column, row = 0) {
     createTable(column, row)
   }
 }
+
 // TIP: start with your exit case and build your first function to simply count down/up to the exit. This greatly reduces the chance of getting stuck in a recursion
 // NOTE: the key here is that all the return statements are actually being added! That final "return 1", every instance of "return [calculate]", these are ALL being taken and added at the end. So this can be used additively or multiplicatively but either way we're adding up all the results (which is basically multiplication anyhow) 
 // NOTE: Make sure to RETURN every function if you need a final return value! Simply tacking a return on the end doesn't work: note how in the first example we RETURN factorial rather than simply calling it. THIS is what makes "return 1" actually come through.
 // NOTE: to check multiple cases with return you can check for negatives. In above example checking (if !factorial(1)) would do something if you get a certain answer or skip past it.
+return facFn2(factorial(n), factorial(y)) // Another good way to pass multiple items in a single return is to call another function on two recursive elements!
 
 // WHILE ***********************************
 // this is like a ForLoop but has a bit more flexibility: it COULD run forever if needed, it could run never, it could stop at an overflow value (such as below where overflow doesn't matter for slicing an array)

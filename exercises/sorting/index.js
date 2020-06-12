@@ -40,8 +40,17 @@ function selectionSort(arr) {
 // I pretty much solved this. The only error was not moving the -1 to a + 1: I want to skip the FIRST element now, not the LAST one.
 
 function mergeSort(arr) {
+  if (arr.length === 1) {
+    return arr;
+  }
+  const center = Math.floor(arr.length / 2);
+  const left = arr.slice(0, center);
+  const right = arr.slice(center);
 
+  return merge(mergeSort(left), mergeSort(right));
 }
+// ************ RESULTS ******************
+// answer was given. Once again the recursion "return" got me: in this case they are passing the function in both sides of the problem. Sneaky!
 
 function merge(left, right) {
   let sortedArray = [];
