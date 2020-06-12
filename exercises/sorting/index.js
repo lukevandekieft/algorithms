@@ -51,6 +51,7 @@ function mergeSort(arr) {
 }
 // ************ RESULTS ******************
 // answer was given. Once again the recursion "return" got me: in this case they are passing the function in both sides of the problem. Sneaky!
+// The top level mergeSort is trying to sort the split arrays into the full array. each recursive call is asked to join the two smaller splits. Each break is calling a split in tandem so they're taking care of themselves.
 
 function merge(left, right) {
   let sortedArray = [];
